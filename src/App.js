@@ -86,6 +86,7 @@ export default function App() {
       }
       }>Delete</button>
         <Msg 
+        key={index}
         description={e.description} 
         image={e.image} 
         name={e.name}
