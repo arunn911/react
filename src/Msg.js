@@ -5,7 +5,7 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { useHistory } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
 import EditIcon from '@mui/icons-material/Edit';
-import { Counter } from './App';
+import { Counter } from "./Counter";
 
 // Msg is our component ;
 export function Msg({ id, delmovie, name, image, description }) {

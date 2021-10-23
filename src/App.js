@@ -6,9 +6,6 @@ import React, { useState } from "react";
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Badge from '@mui/material/Badge';
-import ThumbUpOffAltRoundedIcon from '@mui/icons-material/ThumbUpOffAltRounded';
-import ThumbDownAltRoundedIcon from '@mui/icons-material/ThumbDownAltRounded';
 import TextField from '@mui/material/TextField';
 import { Link, Switch, Route } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
@@ -246,32 +243,4 @@ export default function App() {
 
  }
 
- export function Counter() {
-  const [like, setLike] = useState(0);
-  const [dislike, setDisLike] = useState(0);
 
-  const incrementlike = () => setLike(like + 1);
-  const incrementdislike = () => setDisLike(dislike + 1);
-
-
-
-  return (
-    <div className="opinion">
-<div className="hits">
-<IconButton aria-label="like">
-<Badge badgeContent={like} color="primary">
-  <ThumbUpOffAltRoundedIcon onClick={incrementlike} color="action" />
-</Badge>
-</IconButton>
-<IconButton aria-label="dislike">
-<Badge badgeContent={dislike} color="error">
-  <ThumbDownAltRoundedIcon onClick={incrementdislike} color="action" />
-</Badge>
-</IconButton>
-
-      {/* <button onClick={incrementlike}>👍{like}</button>
-      <button onClick={incrementdislike}>👎{dislike} </button> */}
-      </div>
-    </div>
-  );
-}
