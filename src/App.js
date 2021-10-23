@@ -161,31 +161,31 @@ export default function App() {
 
     <div className="movie-form">
           <TextField onChange={(event)=> setMovieName(event.target.value)} 
-                       id="standard-basic" label="Movie name" variant="standard" />
+                       id="standard-basic" label="Movie name" variant="outlined" />
 
           <TextField onChange={(event)=> setMoviePoster(event.target.value)} 
-                        id="standard-basic" label="Poster url" variant="standard" />
+                        id="standard-basic" label="Poster url" variant="outlined" />
 
           <TextField onChange={(event)=> setMovieDescription(event.target.value)} 
-                  id="standard-basic" label="Movie description" variant="standard" />
+                  id="standard-basic" label="Movie description" variant="outlined" />
 
           <TextField onChange={(event)=> setMovieTrailer(event.target.value)} 
-                  id="standard-basic" label="Trailer url" variant="standard" />
+                  id="standard-basic" label="Trailer url" variant="outlined" />
 
           <TextField onChange={(event)=> setMovieDirector(event.target.value)} 
-                  id="standard-basic" label="Directed by" variant="standard" />
+                  id="standard-basic" label="Directed by" variant="outlined" />
 
           <TextField onChange={(event)=> setMovieYear(event.target.value)} 
-                  id="standard-basic" label="Released year" variant="standard" />
+                  id="standard-basic" label="Released year" variant="outlined" />
 
           <TextField onChange={(event)=> setMovieGenere(event.target.value)} 
-                  id="standard-basic" label="Movie genere" variant="standard" />
+                  id="standard-basic" label="Movie genere" variant="outlined" />
 
           <TextField onChange={(event)=> setMovieCast(event.target.value)} 
-                  id="standard-basic" label="Leadind roles" variant="standard" />
+                  id="standard-basic" label="Leadind roles" variant="outlined" />
 
           <TextField onChange={(event)=> setMovieStory(event.target.value)} 
-                  id="standard-basic" label="Brief story" variant="standard" />
+                  id="standard-basic" label="Brief story" variant="outlined" />
 
         <Button variant="contained" onClick={addMovie}>Add Movie</Button>
         </div>
