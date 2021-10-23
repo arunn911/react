@@ -5,13 +5,14 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { useHistory } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
 import EditIcon from '@mui/icons-material/Edit';
+
 import { Counter } from "./Counter";
 
 // Msg is our component ;
-export function Msg({ id, delmovie, name, image, description }) {
+export function Msg({editmovie, id, delmovie, name, image, description }) {
 
   const [show, setShow] = useState(false);
-  const styles = { display: show ? "block" : "none" };
+//   const styles = { display: show ? "block" : "none" };
 
   const history = useHistory();
 
@@ -42,10 +43,13 @@ export function Msg({ id, delmovie, name, image, description }) {
           <InfoIcon color="primary" />
         </IconButton>
 
+            {editmovie}
 
-        <IconButton aria-label="edit">
+        {/* <IconButton aria-label="edit"
+       onClick={ () => history.push('/movies/edit/' + id) }
+        >
           <EditIcon color="primary" />
-        </IconButton>
+        </IconButton> */}
 
 
         {delmovie}

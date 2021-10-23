@@ -11,7 +11,10 @@ import { Link, Switch, Route } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { MovieDetails } from './MovieDetails';
+import { EditMovie } from './EditMovie';
 import { Msg } from './Msg';
+import { useHistory } from 'react-router-dom';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 
@@ -102,7 +105,7 @@ updateStoredMovies(INITIAL_MOVIES);
 
 export default function App() {
   
-  
+  const history = useHistory();
   const [movies, setMovies] = useState(getFromStorage("movies"));
 
   const [movieName, setMovieName] = useState("");
@@ -152,9 +155,13 @@ export default function App() {
     Welcome to our page
       </Route>
 
-      <Route path="/movies/:movieid"> 
+      <Route exact path="/movies/:movieid"> 
       <MovieDetails/>
       </Route>
+      
+      <Route path="/movies/edit/:editid">
+    <EditMovie />
+        </Route>
 
 
     <Route path="/addMovies"> 
@@ -192,6 +199,7 @@ export default function App() {
 
 
     </Route>
+    
 
     <Route path="/movies">
     <div className="App">
@@ -201,12 +209,6 @@ export default function App() {
        return (
        <div> 
           
-        {/* <button onClick={() => {
-       const removeIdx = index;
-       console.log("Deleting", index);
-       setMovies(movies.filter((mv, idx) => idx != removeIdx));
-     }
-     }>Delete</button> */}
        <Msg 
        delmovie={
          <IconButton  onClick={() => {
@@ -219,6 +221,14 @@ export default function App() {
          } aria-label="delete">
      <DeleteIcon color="error" />
    </IconButton>
+       }
+       editmovie ={
+        <IconButton aria-label="edit"
+        onClick={ () => {
+          history.push('/movies/edit/' + index) }}
+         >
+           <EditIcon color="primary" />
+         </IconButton>
        }
        key={index}
        description={e.description} 
