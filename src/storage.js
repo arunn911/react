@@ -1,5 +1,6 @@
 const INITIAL_MOVIES = [
   {
+    id:1,
     name: "Asuran",
     trailer: "https://www.youtube.com/embed/vOCM9wztBYQ",
     story: "The story revolves around Sivasaamy and his family where his younger son kills a Vadakkooran, a local big shot to avenge his brother's death for a land dispute. To protect his son, Sivasaamy takes him inside forest to hide and escape from the guys of Vadakkooran. Everyone in the family thinks Sivasaamy is a submissive father for his family, fears and submits himself to protect them. But there is something more that Sivasaamy has beneath. Whether Sivasaamy saves his son from Vadakkooran and his people forms the rest of the story.",
@@ -12,6 +13,7 @@ const INITIAL_MOVIES = [
   },
 
   {
+    id:2,
     name: "Baahubali:The Begining",
     trailer: "https://www.youtube.com/embed/CYcKs5fknb8",
     story: "It's a tale of two cousins in the Kingdom of Mahishmati, India. Balla fights his way with cousin Baahubali for the throne. Young Shivudu grows in the tribes and travels to the distant lands above the waterfalls to fall in love with the beautiful Tamanna, the tribal warrior and helps in her quest to rescue Devasena a prisoner from the claws of King Balla. In this quest he finds out that the legendary King Baahubali is his father and Devasena the prisoner is his mother from the slave commander in chief Katappa of King Balla. Katappa narrates to Shivudu about the legends of his father Baahubali and the epic battle by the brothers Balla and Baahubali against the cruel king who attacks the Mahishmati Kingdom, in this battle Baahubali is crowned as the king by Sivagami as she thinks he is more worthier to the throne. This strengthen Balla's hatred towards his brother king Baahubali.",
@@ -24,6 +26,7 @@ const INITIAL_MOVIES = [
   },
 
   {
+    id:3,
     name: "Master",
     trailer: "https://www.youtube.com/embed/1_iUFT3nWHk",
     story: "The plot revolves around Bhavani, a dreadful gangster making a juvenile correction facility his centre for all illegal activities. His own rough childhood makes him a sadistic criminal who uses the young boys at the juvenile facility to achieve his misdeeds. However, Master enters the scene to foil his plans. A free-spirited but carefree schoolteacher, Master gears up to lock horns with Bhavani after a tragic incident. What follows is a pumped up showdown between the two.",
@@ -35,6 +38,7 @@ const INITIAL_MOVIES = [
     description: "An alcoholic professor is sent to a juvenile school, where he clashes with a gangster who uses the school children for criminal activities.",
   },
   {
+    id:4,
     name: "Vikram Vedha",
     trailer: "https://www.youtube.com/embed/1sVr-uWZPjE",
     story: "A badass cop Vikram leads a special task force formed to eliminate a kickass Vedha's gang running amok on the streets of Chennai, making a mockery of Law and Order. An encounter planned by a Vikram's friend Simon, kills Vedha's trusted aides and brings him out of hiding. Vedha lays his clutch on Vikram and engages in a disturbing mind game of sorts which results in a quest to reveal the truth behind that fateful encounter..",
@@ -47,6 +51,7 @@ const INITIAL_MOVIES = [
   },
 
   {
+    id:5,
     name: "Baahubali:The Conclusion",
     trailer: "https://www.youtube.com/embed/94BzBOpv42g",
     story: "When Shiva, the son of Bahubali, learns about his heritage, he begins to look for answers. His story is juxtaposed with past events that unfolded in the Mahishmati Kingdom.Kattappa narrates the story of Amarendra Baahubali to Shivudu, who learns his lineage as the prince of Mahishmati and the son of Amarendra Baahubali. Shivudu, now Mahendra Baahubali, decides to dethrone and punish Bhallaladeva for all wrongdoings of his past with the help of Kattappa.Upon listening to a narrative of his parents' love story and the treachery that led to his father's death, Shiva, the son of Bahubali, must claim his place as the rightful heir to the throne of the Mahishmati Kingdom, but first, he must avenge the injustice committed against his parents and people.",
@@ -58,6 +63,7 @@ const INITIAL_MOVIES = [
     description: "When Shiva, the son of Bahubali, learns about his heritage, he begins to look for answers. His story is juxtaposed with past events that unfolded in the Mahishmati Kingdom.",
   },
   {
+    id:6,
     name: "Petta",
     trailer: "https://www.youtube.com/embed/FCB0ZfQ9Rzs",
     story: "The story of Petta revolves around a person named Kaali, who is working as a college warden. He earns the love of the college students by helping them out in many ways. At the same time, Kaali has a past which no one knows and he has to take one someone really big.",

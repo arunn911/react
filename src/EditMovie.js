@@ -8,8 +8,8 @@ import { useHistory, useParams } from 'react-router-dom';
 export function EditMovie ({ movies, setMovies }) 
 {
 const history = useHistory();
-const {editid} = useParams();
-const movie = getFromStorage('movies')[editid];
+const {id} = useParams();
+const movie = getFromStorage('movies')[id];
 
   const [movieName, setMovieName] = useState(movie.name);
   const [moviePoster, setMoviePoster] = useState(movie.image);
@@ -34,7 +34,7 @@ const movie = getFromStorage('movies')[editid];
           trailer:movieTrailer,
         };
         let updatedMovies = [...movies];
-        updatedMovies[editid] = editedMovie;
+        updatedMovies[id] = editedMovie;
         setMovies(updatedMovies);
         updateStoredMovies(updatedMovies);
         history.push('/movies')

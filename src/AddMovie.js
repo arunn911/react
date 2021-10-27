@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import React, { useState } from "react";
-import { updateStoredMovies } from './storage';
+// import { updateStoredMovies } from './storage';
 import { useHistory} from 'react-router-dom';
 
 
@@ -20,6 +20,19 @@ import { useHistory} from 'react-router-dom';
     const [movieGenere, setMovieGenere] = useState("");
     const [movieTrailer, setMovieTrailer] = useState("");
 
+    const createMovie = (newMovie) =>
+    {
+        fetch("https://612a0529068adf001789ba06.mockapi.io/movies", {
+            method: "POST",
+            body:JSON.stringify(newMovie),
+            headers: { "Content-type": "application/json" },
+    
+    })
+        .then((data) => data.json())
+        .then((mvs) => setMovies(mvs));
+
+    }
+
     const addMovie = () => {
         const newMovie = {
           name:movieName,
@@ -32,8 +45,9 @@ import { useHistory} from 'react-router-dom';
           genere:movieGenere,
           trailer:movieTrailer,
         };
-        setMovies([...movies, newMovie]);
-        updateStoredMovies([...movies,newMovie]);
+        // setMovies([...movies, newMovie]);
+        // updateStoredMovies([...movies,newMovie]);
+        createMovie(newMovie);
         history.push('/movies');
       };
 

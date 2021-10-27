@@ -1,16 +1,28 @@
 import React from "react";
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
+// import ButtonGroup from '@mui/material/ButtonGroup';
 import { useHistory, useParams } from 'react-router-dom';
+import { useState, useEffect} from "react";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { getFromStorage } from "./storage";
+// import { getFromStorage } from "./storage";
 
 export function MovieDetails() {
 
-  const { movieid } = useParams();
-  const movie = getFromStorage('movies')[movieid];
-//   console.log(movie.name);
+  const { mid } = useParams();
+//   const movie = getFromStorage('movies')[movieid];
+// //   console.log(movie.name);
+    const [movie, setMovie] = useState({});
 
+    const showMovies = () => 
+        {
+            fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + mid)
+            .then((data) => data.json())
+            .then((mvs) => setMovie(mvs));
+        
+          }
+    
+    useEffect(() => showMovies,[])
+      console.log(movie);
   const history = useHistory();
 
   return (
@@ -26,10 +38,10 @@ export function MovieDetails() {
       </div>
       <div className="movie-info">
         <h1>{movie.name}</h1>
-        <ButtonGroup variant="text" aria-label="text button group">
+        {/* <ButtonGroup variant="text" aria-label="text button group">
           <Button>{movie.genere[0]}</Button>
           <Button>{movie.genere[1]}</Button>
-        </ButtonGroup>
+        </ButtonGroup> */}
         <p className="story">{movie.story}</p>
         <div className="creator">
           <p><span className="highlight">Director :</span> {movie.director}</p>

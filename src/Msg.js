@@ -4,12 +4,12 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { useHistory } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
-import EditIcon from '@mui/icons-material/Edit';
+
 
 import { Counter } from "./Counter";
 
 // Msg is our component ;
-export function Msg({editmovie, id, delmovie, name, image, description }) {
+export function Msg({editmovie, deletemovie, id, name, image, description }) {
 
   const [show, setShow] = useState(false);
 //   const styles = { display: show ? "block" : "none" };
@@ -19,12 +19,12 @@ export function Msg({editmovie, id, delmovie, name, image, description }) {
 
   return (
     <div className="card">
-      <img className="poster" src={image} height="250" />
+      <img alt="img" className="poster" src={image} height="250" />
       <Counter />
       <div className="titlebar">
         <h1>{name}
 
-          <IconButton onClick={() => setShow(!show)} aria-label="delete">
+          <IconButton onClick={() => setShow(!show)} aria-label="show des">
             {show ? <ArrowDropUpIcon color="primary" /> :
               <ArrowDropDownIcon color="primary" />}
           </IconButton>
@@ -52,7 +52,7 @@ export function Msg({editmovie, id, delmovie, name, image, description }) {
         </IconButton> */}
 
 
-        {delmovie}
+           {deletemovie}
 
       </div>
 
