@@ -8,16 +8,16 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export function MovieDetails() {
 
-  const { mid } = useParams();
+  const { id } = useParams();
 //   const movie = getFromStorage('movies')[movieid];
 // //   console.log(movie.name);
     const [movie, setMovie] = useState({});
 
     const showMovies = () => 
         {
-            fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + mid)
+            fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + id)
             .then((data) => data.json())
-            .then((mvs) => setMovie(mvs));
+            .then((mv) => setMovie(mv));
         
           }
     

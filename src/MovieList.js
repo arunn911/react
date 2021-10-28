@@ -8,35 +8,35 @@ import { useHistory} from 'react-router-dom';
 export function MovieList ({movies, setMovies, getMovies})
 {
 const history = useHistory();
-// const deleteMovie = (id) => 
-// {
-// fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + id , {method:"DELETE"})
-// .then((data) => data.json())
-// .then((data) => getMovies());
+const deleteMovie = (id) => 
+{
+fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + id , {method:"DELETE"})
+.then((data) => data.json())
+.then((data) => getMovies(data));
 
-// }
+}
 
 
 return(
 <div className="App">
      
-     {movies.map((e, index) => {
+     {movies.map((movie, index) => {
        console.log(index);
        return (
        <div> 
           
        <Msg 
 
-        key={e.id}
-        description={e.description} 
-        image={e.image} 
-        name={e.name}
-        id={e.id}
+        key={movie.id}
+        description={movie.description} 
+        image={movie.image} 
+        name={movie.name}
+        id={movie.id}
 
 
        deletemovie = {
         <IconButton  onClick={() => {
-            // deleteMovie(e.id);
+            deleteMovie(movie.id);
             }
             } aria-label="delete">
             <DeleteIcon color="error" />

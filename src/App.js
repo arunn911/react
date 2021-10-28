@@ -22,7 +22,7 @@ export default function App() {
   const getMovies = () => 
   {
 
-    fetch("https://612a0529068adf001789ba06.mockapi.io/movies", {method: "GET"})
+    fetch("https://612a0529068adf001789ba06.mockapi.io/movies")
     .then((data) => data.json())
     .then((mvs) => setMovies(mvs));
 
@@ -46,30 +46,30 @@ export default function App() {
 
 
 
-<Switch>
+      <Switch>
 
-    <Route exact path="/">
-    Welcome to our page 
-      </Route>
+          <Route exact path="/">
+          Welcome to our page 
+            </Route>
 
-      <Route exact path="/movies/:mid"> 
-         <MovieDetails/>
-      </Route>
-      
-      <Route path="/movies/edit/:id">
-         <EditMovie movies={movies} setMovies={setMovies} />
-      </Route>
+            <Route exact path="/movies/:id"> 
+              <MovieDetails movies={movies} setMovies={setMovies} getMovies={getMovies}/>
+            </Route>
+            
+            <Route path="/movies/edit/:id">
+              <EditMovie movies={movies} setMovies={setMovies} />
+            </Route>
 
-       <Route path="/addMovies"> 
-         <AddMovie movies={movies} setMovies={setMovies} />
-       </Route>
+            <Route path="/addMovies"> 
+              <AddMovie movies={movies} setMovies={setMovies} />
+            </Route>
 
-        <Route exact path="/movies">
-          <MovieList movies={movies} setMovies={setMovies} getMovies={getMovies} />
-        </Route>
+              <Route exact path="/movies">
+                <MovieList movies={movies} setMovies={setMovies} getMovies={getMovies} />
+              </Route>
 
-  </Switch>
-    
+        </Switch>
+          
    
     </section>
   );
