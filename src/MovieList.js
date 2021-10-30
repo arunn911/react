@@ -12,7 +12,7 @@ const deleteMovie = (id) =>
 {
 fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + id , {method:"DELETE"})
 .then((data) => data.json())
-.then((data) => getMovies(data));
+.then((data) => getMovies());
 
 }
 

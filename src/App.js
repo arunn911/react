@@ -26,7 +26,7 @@ export default function App() {
     .then((data) => data.json())
     .then((mvs) => setMovies(mvs));
 
-  }
+  };
 
    useEffect(() => getMovies,[]);
 

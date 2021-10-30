@@ -29,7 +29,7 @@ import { useHistory} from 'react-router-dom';
     
     })
         .then((data) => data.json())
-        .then((mvs) => setMovies(mvs));
+        .then((data) => history.push('/movies') );
 
     }
 
@@ -48,7 +48,7 @@ import { useHistory} from 'react-router-dom';
         // setMovies([...movies, newMovie]);
         // updateStoredMovies([...movies,newMovie]);
         createMovie(newMovie);
-        history.push('/movies');
+        
       };
 
 
