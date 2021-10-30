@@ -12,10 +12,24 @@ import { MovieDetails } from './MovieDetails';
 import { AddMovie } from './AddMovie';
 import { EditMovie } from './EditMovie';
 import { MovieList } from './MovieList';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import IconButton from '@mui/material/IconButton';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 // import {  updateStoredMovies } from './storage';
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const theme = createTheme ({
+    palette:{
+      mode: darkMode ? "dark": "light",
+    
+    },
+  });
+  
    
   const [movies, setMovies] = useState([]);
 
@@ -31,6 +45,8 @@ export default function App() {
    useEffect(() => getMovies,[]);
 
   return (
+    <ThemeProvider theme={theme}>x
+ <Paper>
     <section>
       <div className="cover">
 
@@ -40,6 +56,12 @@ export default function App() {
           <Link to="/">Home</Link>
         <Link to="/addMovies">Add Movies</Link>
         <Link to="/movies">Movies</Link>
+
+        <IconButton onClick={() => setDarkMode(!darkMode)} aria-label="change-mode">
+            {darkMode ? <DarkModeIcon color="action" /> :
+              <LightModeIcon  color="action" />}
+          </IconButton>
+
           {/* <Link to="about">About</Link> */}
           </Toolbar>
           </AppBar>
@@ -72,6 +94,8 @@ export default function App() {
           
    
     </section>
+    </Paper>
+    </ThemeProvider>
   );
 
  }
