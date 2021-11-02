@@ -2,7 +2,7 @@
 import './App.css';
 
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 
 import { Link, Switch, Route } from 'react-router-dom';
@@ -17,35 +17,29 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import { About } from './About';
 
 // import {  updateStoredMovies } from './storage';
 
-export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
+export default function App() 
+{
+
+
+  const [darkMode, setDarkMode] = useState(true);
 
   const theme = createTheme ({
     palette:{
       mode: darkMode ? "dark": "light",
     
     },
+
   });
   
    
-  const [movies, setMovies] = useState([]);
-
-  const getMovies = () => 
-  {
-
-    fetch("https://612a0529068adf001789ba06.mockapi.io/movies")
-    .then((data) => data.json())
-    .then((mvs) => setMovies(mvs));
-
-  };
-
-   useEffect(() => getMovies,[]);
+  
 
   return (
-    <ThemeProvider theme={theme}>x
+    <ThemeProvider theme={theme}>
  <Paper>
     <section>
       <div className="cover">
@@ -72,22 +66,23 @@ export default function App() {
 
           <Route exact path="/">
           Welcome to our page 
+          {/* <About/> */}
             </Route>
 
             <Route exact path="/movies/:id"> 
-              <MovieDetails movies={movies} setMovies={setMovies} getMovies={getMovies}/>
+              <MovieDetails />
             </Route>
             
             <Route path="/movies/edit/:id">
-              <EditMovie movies={movies} setMovies={setMovies} />
+              <EditMovie/>
             </Route>
 
             <Route path="/addMovies"> 
-              <AddMovie movies={movies} setMovies={setMovies} />
+              <AddMovie/>
             </Route>
 
               <Route exact path="/movies">
-                <MovieList movies={movies} setMovies={setMovies} getMovies={getMovies} />
+                <MovieList />
               </Route>
 
         </Switch>

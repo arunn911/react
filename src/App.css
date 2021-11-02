@@ -27,6 +27,7 @@ body{
  display: grid;
  grid-gap:20px;
  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+ justify-items: center;
  /* grid-template-columns: repeat(3,1fr);
  justify-items: center; */
 }

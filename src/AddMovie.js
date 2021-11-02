@@ -6,7 +6,7 @@ import { useHistory} from 'react-router-dom';
 
 
 
-  export function AddMovie ({ movies, setMovies }) 
+  export function AddMovie () 
   {
 
     const history = useHistory();
@@ -22,10 +22,11 @@ import { useHistory} from 'react-router-dom';
 
     const createMovie = (newMovie) =>
     {
-        fetch("https://612a0529068adf001789ba06.mockapi.io/movies", {
+        fetch("https://612a0529068adf001789ba06.mockapi.io/movies",
+         {
             method: "POST",
             body:JSON.stringify(newMovie),
-            headers: { "Content-type": "application/json" },
+            headers: {"Content-type":"application/json"},
     
     })
         .then((data) => data.json())

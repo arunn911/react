@@ -3,11 +3,30 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { Msg } from './Msg';
 import { useHistory} from 'react-router-dom';
+import { useEffect, useState} from 'react';
 // import { useEffect } from 'react';
 
-export function MovieList ({movies, setMovies, getMovies})
+export function MovieList ()
 {
 const history = useHistory();
+
+
+const [movies, setMovies] = useState([]);
+
+  const getMovies = () => 
+  {
+
+    fetch("https://612a0529068adf001789ba06.mockapi.io/movies")
+    .then((data) => data.json())
+    .then((mvs) => setMovies(mvs));
+
+  };
+
+   useEffect(() => getMovies(),[]);
+
+
+
+
 const deleteMovie = (id) => 
 {
 fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + id , {method:"DELETE"})
