@@ -66,7 +66,6 @@ export default function App()
       <Switch>
 
           <Route exact path="/">
-          Welcome to our page 
           <LoginForm/>
             </Route>
 

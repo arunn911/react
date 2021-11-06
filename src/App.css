@@ -139,7 +139,7 @@ body{
   background: url(/src/bg1.png);
 }
 .homepage{
-  height: 61.1vh;
+  height: 63.2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,17 +153,11 @@ body{
 }
 .homepage button{
   padding: 10px;
-  margin: 5px;
+  margin: 25px 0;
   width: 250px;
-  background: #1976d2;
 }
 .homepage h2{
   padding: 10px;
-}
-.errormsg{
-  padding: 10px;
-  font-size: 14px;
-  color: rgb(255, 4, 4);
 }
 .logincard{
  
@@ -175,4 +169,10 @@ body{
   justify-content: center;
   width: 320px;
   height:350px
+}
+.mainform{
+  display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
