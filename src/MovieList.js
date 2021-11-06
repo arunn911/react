@@ -40,7 +40,7 @@ return(
 <div className="App">
      
      {movies.map((movie, index) => {
-       console.log(index);
+    //    console.log(index);
        return (
        <div> 
           
@@ -64,7 +64,7 @@ return(
        editmovie ={
         <IconButton aria-label="edit"
         onClick={ () => {
-          history.push('/movies/edit/' + index) }}
+          history.push('/movies/edit/' + movie.id) }}
          >
            <EditIcon color="primary" />
          </IconButton>

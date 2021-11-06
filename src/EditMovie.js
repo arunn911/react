@@ -1,25 +1,67 @@
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import React, { useState } from "react";
-import {  getFromStorage ,updateStoredMovies } from './storage';
+import React, { useEffect, useState } from "react";
+// import {  getFromStorage ,updateStoredMovies } from './storage';
 import { useHistory, useParams } from 'react-router-dom';
 
 
-export function EditMovie ({ movies, setMovies }) 
+export function EditMovie () 
 {
 const history = useHistory();
 const {id} = useParams();
-const movie = getFromStorage('movies')[id];
+// const movie = getFromStorage('movies')[id];
 
-  const [movieName, setMovieName] = useState(movie.name);
-  const [moviePoster, setMoviePoster] = useState(movie.image);
-  const [movieDescription, setMovieDescription] = useState(movie.description);
-  const [movieDirector, setMovieDirector] = useState(movie.director);
-  const [movieStory, setMovieStory] = useState(movie.story);
-  const [movieCast, setMovieCast] = useState(movie.cast);
-  const [movieYear, setMovieYear] = useState(movie.year);
-  const [movieGenere, setMovieGenere] = useState(movie.genere);
-  const [movieTrailer, setMovieTrailer] = useState(movie.trailer);
+const [movieName, setMovieName] = useState("");
+const [moviePoster, setMoviePoster] = useState("");
+const [movieDescription, setMovieDescription] = useState("");
+const [movieDirector, setMovieDirector] = useState("");
+const [movieStory, setMovieStory] = useState("");
+const [movieCast, setMovieCast] = useState("");
+const [movieYear, setMovieYear] = useState("");
+// const [movieGenere, setMovieGenere] = useState(movie.genere);
+const [movieTrailer, setMovieTrailer] = useState("");
+
+const getMovie = () => 
+{
+
+  fetch("https://612a0529068adf001789ba06.mockapi.io/movies/"+ id)
+  .then((data) => data.json())
+  .then((mvs) => {
+    setMovieName(mvs.name)
+    setMoviePoster(mvs.image)
+    setMovieDescription(mvs.description)
+    setMovieDirector(mvs.director)
+    setMovieStory(mvs.story)
+    setMovieCast(mvs.cast)
+    setMovieYear(mvs.year)
+    setMovieTrailer(mvs.trailer)
+
+
+  });
+
+};
+
+ useEffect(() => getMovie());
+
+  const updateMovie = (editedMovie) => 
+  {
+
+    fetch("https://612a0529068adf001789ba06.mockapi.io/movies/"+ id,
+    {
+       method: "PUT",
+       body:JSON.stringify(editedMovie),
+       headers: {"Content-type":"application/json"},
+
+})
+   .then((data) => data.json())
+   .then((data) => history.push('/movies') );
+
+
+  }
+
+
+
+
 
         const editMovie = () => {
         const editedMovie = {
@@ -30,18 +72,16 @@ const movie = getFromStorage('movies')[id];
           story:movieStory,
           cast:movieCast,
           year:movieYear,
-          genere:movieGenere,
+          // genere:movieGenere,
           trailer:movieTrailer,
         };
-        let updatedMovies = [...movies];
-        updatedMovies[id] = editedMovie;
-        setMovies(updatedMovies);
-        updateStoredMovies(updatedMovies);
-        history.push('/movies')
+        // let updatedMovies = [...movies];
+        // updatedMovies[id] = editedMovie;
+        // setMovies(updatedMovies);
+        // updateStoredMovies(updatedMovies);
+        // history.push('/movies')
+        updateMovie(editedMovie);
       };
-
-
-
 
   return (
       <div className="movie-form">
@@ -75,10 +115,6 @@ const movie = getFromStorage('movies')[id];
       onChange={(event)=> setMovieYear(event.target.value)} 
               id="standard-basic" label="Released year" variant="outlined" />
 
-      <TextField 
-      value={movieGenere}
-      onChange={(event)=> setMovieGenere(event.target.value)} 
-              id="standard-basic" label="Movie genere" variant="outlined" />
 
       <TextField 
       value={movieCast}

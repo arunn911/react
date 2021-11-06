@@ -10,6 +10,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { MovieDetails } from './MovieDetails';
 import { AddMovie } from './AddMovie';
+import { LoginForm } from './LoginForm';
 import { EditMovie } from './EditMovie';
 import { MovieList } from './MovieList';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -17,7 +18,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { About } from './About';
+
 
 // import {  updateStoredMovies } from './storage';
 
@@ -66,7 +67,7 @@ export default function App()
 
           <Route exact path="/">
           Welcome to our page 
-          {/* <About/> */}
+          <LoginForm/>
             </Route>
 
             <Route exact path="/movies/:id"> 

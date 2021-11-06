@@ -13,8 +13,20 @@ body{
 .poster{
   height: 300px;
   width: 200px;
+  /* -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out; */
 }
-
+/* .poster:hover{
+  -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+} */
+.imagebox{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
 .opinion{
   display: flex;
   padding: 10px;
@@ -55,6 +67,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .card h1{
   padding-bottom: 10px;
@@ -124,4 +137,42 @@ body{
 .cover {
   height: 30vh;
   background: url(/src/bg1.png);
+}
+.homepage{
+  height: 61.1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.homepage input{
+  display: block;
+  padding: 10px;
+  margin: 5px;
+  width: 250px;
+}
+.homepage button{
+  padding: 10px;
+  margin: 5px;
+  width: 250px;
+  background: #1976d2;
+}
+.homepage h2{
+  padding: 10px;
+}
+.errormsg{
+  padding: 10px;
+  font-size: 14px;
+  color: rgb(255, 4, 4);
+}
+.logincard{
+ 
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height:350px
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ColorBox } from './ColorBox';
 
-function Color() {
+export function Color() {
 
   const [color, setColor] = useState("orange");
   const styles = { backgroundColor: color, margin: "5px 0", color: "white", fontSize: "1.5rem" };

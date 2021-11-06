@@ -21,7 +21,7 @@ export function MovieDetails() {
         
           }
     
-    useEffect(() => showMovies(),[])
+    useEffect(() => showMovies())
       console.log(movie);
   const history = useHistory();
 
