@@ -16,7 +16,9 @@ const [movies, setMovies] = useState([]);
   const getMovies = () => 
   {
 
-    fetch("https://612a0529068adf001789ba06.mockapi.io/movies")
+    fetch("https://612a0529068adf001789ba06.mockapi.io/movies", {
+        method: "GET",
+    })
     .then((data) => data.json())
     .then((mvs) => setMovies(mvs));
 
