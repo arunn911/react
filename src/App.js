@@ -54,15 +54,16 @@ export default function App()
           <Link to="/">Home</Link>
         <Link to="/addMovies">Add Movies</Link>
         <Link to="/movies">Movies</Link>
-      <div className="themebtn">
+    
+          {/* <Link to="about">About</Link> */}
+          </Toolbar>
+          <div className="themebtn">
         <IconButton  onClick={() => setDarkMode(!darkMode)} aria-label="change-mode">
             {darkMode ? <DarkModeIcon color="action" /> :
               <LightModeIcon  color="action" />}
               {/* <p>changetheme</p> */}
           </IconButton>
       </div>
-          {/* <Link to="about">About</Link> */}
-          </Toolbar>
           </AppBar>
 
 

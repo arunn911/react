@@ -41,7 +41,7 @@ const getMovie = () =>
 
 };
 
- useEffect(() => getMovie(),[id]);
+ useEffect(() => {getMovie()},[id]);
   const updateMovie = (editedMovie) => 
   {
 
