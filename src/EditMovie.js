@@ -41,8 +41,7 @@ const getMovie = () =>
 
 };
 
- useEffect(() => getMovie());
-
+ useEffect(() => getMovie(),[id]);
   const updateMovie = (editedMovie) => 
   {
 
@@ -133,5 +132,4 @@ const getMovie = () =>
   </div>
 
   )
-
 }

@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 // import { useState } from "react";
 import React from "react";
 // import { updateStoredMovies } from './storage';
-import {useFormik} from 'formik'
+import {useFormik} from 'formik';
 
 import * as yup from 'yup';
 import { useHistory} from 'react-router-dom';
@@ -12,38 +12,38 @@ import { useHistory} from 'react-router-dom';
 const addMovieValidationSchema = yup.object({
     name : yup
             .string()
-            .required("Fields should not be empty !!!"),
+            .required("Movie name must be added"),
 
     image : yup
             .string()
-            .required("Fields should not be empty !!!"),
+            .required("Poster should not be empty"),
 
     description : yup
             .string()
             .min(100, "Description should atleast have 100 characters ")
             .max(200, "Description should not exceed 200 characters")
-            .required("Fields should not be empty !!!"),
+            .required("Please describe the movie shortly"),
     trailer : yup
             .string()
-            .required("Fields should not be empty !!!"),
+            .required("Please add the trailer of the movie"),
 
     director : yup
             .string()
-            .required("Fields should not be empty !!!"),
+            .required("Who is the director of the movie ?"),
 
     year : yup
             .string()
-            .required("Fields should not be empty !!!"),
+            .required("Which year the movie got released ?"),
 
     cast : yup
             .string()
-            .required("Fields should not be empty !!!"),
+            .required("Please add the leading roles in the film"),
 
     story : yup
             .string()
             .min(300, "Story should atleast have 300 characters ")
             .max(700, "Story should not exceed 500 characters")
-            .required("Fields should not be empty !!!"),
+            .required("A brief story is needed"),
             
 })
 

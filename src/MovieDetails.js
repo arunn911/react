@@ -18,11 +18,11 @@ export function MovieDetails() {
             fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + id)
             .then((data) => data.json())
             .then((mv) => setMovie(mv));
-        
+           
           }
     
-    useEffect(() => showMovies(),[])
-      console.log(movie);
+    useEffect(() => showMovies(),[id])
+    console.log(movie);
   const history = useHistory();
 
   return (
@@ -31,8 +31,8 @@ export function MovieDetails() {
         <iframe
           src={movie.trailer}
           title="YouTube video player"
-          frameborder="0"
-          allowfullscreen="allowfullscreen">
+          frameBorder="0"
+          allowFullScreen="allowfullscreen">
 
         </iframe>
       </div>
