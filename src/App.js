@@ -22,83 +22,82 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 
 // import {  updateStoredMovies } from './storage';
 
-export default function App() 
-{
+export default function App() {
 
 
   const [darkMode, setDarkMode] = useState(true);
 
-  const theme = createTheme ({
-    palette:{
-      mode: darkMode ? "dark": "light",
-    
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? "dark" : "light",
+
     },
 
   });
-  
-   
-  
+
+
+
 
   return (
-         <ThemeProvider theme={theme}>
-        <Paper
+    <ThemeProvider theme={theme}>
+      <Paper
         elevation={4}
-        style={{minHeight:"max(100%, 100vh)", borderRadius: "0"}}
-        >
-     <section>
-         <div className="cover">
+        style={{ minHeight: "max(100%, 100vh)", borderRadius: "0" }}
+      >
+        <section>
+          <div className="cover">
 
-         </div>
-      <AppBar className="navbar" position="sticky">
-        <Toolbar className="menu-bar">
-          <Link to="/">Home</Link>
-        <Link to="/addMovies">Add Movies</Link>
-        <Link to="/movies">Movies</Link>
-        <div className="themebtn">
-        <IconButton  onClick={() => setDarkMode(!darkMode)} aria-label="change-mode">
-            {darkMode ? <DarkModeIcon color="action" /> :
-              <LightModeIcon  color="action" />}
-              {/* <p>changetheme</p> */}
-          </IconButton>
-      </div>
-        
-          {/* <Link to="about">About</Link> */}
-          </Toolbar>
-        
-      </AppBar>
+          </div>
+          <AppBar className="navbar" position="sticky">
+            <Toolbar className="menu-bar">
+              <Link to="/">Home</Link>
+              <Link to="/addMovies">Add Movies</Link>
+              <Link to="/movies">Movies</Link>
+              <div className="themebtn">
+                <IconButton onClick={() => setDarkMode(!darkMode)} aria-label="change-mode">
+                  {darkMode ? <DarkModeIcon color="action" /> :
+                    <LightModeIcon color="action" />}
+                  {/* <p>changetheme</p> */}
+                </IconButton>
+              </div>
+
+              {/* <Link to="about">About</Link> */}
+            </Toolbar>
+
+          </AppBar>
 
 
 
-      <Switch>
+          <Switch>
 
-          <Route exact path="/">
-          <LoginForm/>
+            <Route exact path="/">
+              <LoginForm />
             </Route>
 
-            <Route exact path="/movies/:id"> 
+            <Route exact path="/movies/:id">
               <MovieDetails />
             </Route>
-            
+
             <Route path="/movies/edit/:id">
-              <EditMovie/>
+              <EditMovie />
             </Route>
 
-            <Route path="/addMovies"> 
-              <AddMovie/>
+            <Route path="/addMovies">
+              <AddMovie />
             </Route>
 
-              <Route exact path="/movies">
-                <MovieList />
-              </Route>
+            <Route exact path="/movies">
+              <MovieList />
+            </Route>
 
-        </Switch>
-          
-   
-    </section>
-    </Paper>
+          </Switch>
+
+
+        </section>
+      </Paper>
     </ThemeProvider>
   );
 
- }
+}
 
 

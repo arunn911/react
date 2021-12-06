@@ -9,18 +9,18 @@ import InfoIcon from '@mui/icons-material/Info';
 import { Counter } from "./Counter";
 
 // Msg is our component ;
-export function Msg({editmovie, deletemovie, id, name, image, description }) {
+export function Msg({ editmovie, deletemovie, id, name, image, description }) {
 
   const [show, setShow] = useState(false);
-//   const styles = { display: show ? "block" : "none" };
+  //   const styles = { display: show ? "block" : "none" };
 
   const history = useHistory();
 
 
   return (
     <div className="card" key={id}>
-        <div className="imagebox">
-      <img alt="img" className="poster" src={image} height="250" /> </div>
+      <div className="imagebox">
+        <img alt="img" className="poster" src={image} height="250" /> </div>
       <Counter />
       <div className="titlebar">
         <h1>{name}
@@ -44,7 +44,7 @@ export function Msg({editmovie, deletemovie, id, name, image, description }) {
           <InfoIcon color="primary" />
         </IconButton>
 
-            {editmovie}
+        {editmovie}
 
         {/* <IconButton aria-label="edit"
        onClick={ () => history.push('/movies/edit/' + id) }
@@ -53,7 +53,7 @@ export function Msg({editmovie, deletemovie, id, name, image, description }) {
         </IconButton> */}
 
 
-           {deletemovie}
+        {deletemovie}
 
       </div>
 
