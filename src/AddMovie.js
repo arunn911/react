@@ -1,5 +1,6 @@
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { API_URL } from './globalConstants';
 // import { useState } from "react";
 import React from "react";
 // import { updateStoredMovies } from './storage';
@@ -78,7 +79,7 @@ const addMovieValidationSchema = yup.object({
 
     const createMovie = (newMovie) =>
     {
-        fetch("https://612a0529068adf001789ba06.mockapi.io/movies",
+        fetch(`${API_URL}`,
          {
             method: "POST",
             body:JSON.stringify(newMovie),

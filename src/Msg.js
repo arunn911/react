@@ -18,7 +18,7 @@ export function Msg({editmovie, deletemovie, id, name, image, description }) {
 
 
   return (
-    <div className="card">
+    <div className="card" key={id}>
         <div className="imagebox">
       <img alt="img" className="poster" src={image} height="250" /> </div>
       <Counter />

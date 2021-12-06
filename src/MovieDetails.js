@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { useHistory, useParams } from 'react-router-dom';
 import { useState, useEffect} from "react";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { API_URL } from './globalConstants';
 // import { getFromStorage } from "./storage";
 
 export function MovieDetails() {
@@ -15,13 +16,13 @@ export function MovieDetails() {
 
     const showMovies = () => 
         {
-            fetch("https://612a0529068adf001789ba06.mockapi.io/movies/" + id)
+            fetch(`${API_URL}/` + id)
             .then((data) => data.json())
             .then((mv) => setMovie(mv));
            
           }
     
-    useEffect(() => {showMovies()},[id])
+    useEffect(showMovies, [id]);
     console.log(movie);
   const history = useHistory();
 
@@ -38,10 +39,6 @@ export function MovieDetails() {
       </div>
       <div className="movie-info">
         <h1>{movie.name}</h1>
-        {/* <ButtonGroup variant="text" aria-label="text button group">
-          <Button>{movie.genere[0]}</Button>
-          <Button>{movie.genere[1]}</Button>
-        </ButtonGroup> */}
         <p className="story">{movie.story}</p>
         <div className="creator">
           <p><span className="highlight">Director :</span> {movie.director}</p>

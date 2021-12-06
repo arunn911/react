@@ -40,31 +40,32 @@ export default function App()
   
 
   return (
-    <ThemeProvider theme={theme}>
- <Paper
- elevation={4}
- style={{minHeight:"max(100%, 100vh)", borderRadius: "0"}}
- >
-    <section>
-      <div className="cover">
+         <ThemeProvider theme={theme}>
+        <Paper
+        elevation={4}
+        style={{minHeight:"max(100%, 100vh)", borderRadius: "0"}}
+        >
+     <section>
+         <div className="cover">
 
-        </div>
-      <AppBar position="sticky">
+         </div>
+      <AppBar className="navbar" position="sticky">
         <Toolbar className="menu-bar">
           <Link to="/">Home</Link>
         <Link to="/addMovies">Add Movies</Link>
         <Link to="/movies">Movies</Link>
-    
-          {/* <Link to="about">About</Link> */}
-          </Toolbar>
-          <div className="themebtn">
+        <div className="themebtn">
         <IconButton  onClick={() => setDarkMode(!darkMode)} aria-label="change-mode">
             {darkMode ? <DarkModeIcon color="action" /> :
               <LightModeIcon  color="action" />}
               {/* <p>changetheme</p> */}
           </IconButton>
       </div>
-          </AppBar>
+        
+          {/* <Link to="about">About</Link> */}
+          </Toolbar>
+        
+      </AppBar>
 
 
 

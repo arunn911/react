@@ -89,11 +89,12 @@ body{
 .titlebar{
   height: 35px;
 }
+
 .info-container{
   height: 80vh;
   display: grid;
   grid-gap:10px;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 50px;
   align-items: center;
 }
@@ -159,9 +160,7 @@ body{
 .homepage h2{
   padding: 10px;
 }
-.themebtn{
-  float: right;
-}
+
 .logincard{
  
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
